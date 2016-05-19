@@ -14,7 +14,7 @@ import com.uday.Student;
 
 @Repository
 public class StudentDaoImpl implements StudentDao {
-
+   
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -35,6 +35,7 @@ public class StudentDaoImpl implements StudentDao {
 	
 	public void removeStudent(Integer id) {
 		// TODO Auto-generated method stub
+		
 		Student student = (Student) sessionFactory.getCurrentSession().load(Student.class, id);
 		if (null != student) {
 			sessionFactory.getCurrentSession().delete(student);

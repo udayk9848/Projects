@@ -52,5 +52,35 @@ td#sample {
     </tr>
 </table>  
 </form:form>
+
+   
+    <br>
+   
+ <c:if  test="${!empty contactList}">  
+  <table style="width:100%">
+  
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>		
+    <th>AGE</th>
+    <th>MAIL</th>
+    <th>PHNO</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  <c:forEach items="${contactList}" var="command">
+  <tr>
+    <td>${command.id}</td>
+    <td>${command.name}</td>		
+    <td>${command.age}</td>
+    <td>${command.mail}</td>
+    <td>${command.phone}</td>	
+    <td><a href="edit/${command.id}">edit</a></td>	  
+    <td><a href="delete/${command.id}">delete</a></td>	  
+  </tr>
+  </c:forEach>
+</table>
+</c:if>
+
 </body>
 </html>
